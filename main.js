@@ -180,3 +180,72 @@ function returnOnlyInteger(arr) {
   }
   return res;
 }
+
+// Create a function that applies a discount d to every number in the array.
+
+function getDiscounts(nums, d) {
+  let pct = parseFloat(d) / 100;
+  return nums.map(x => x * pct);
+}
+
+// Create a method in the Person class which returns how another person's age compares.
+// Given the instances p1, p2 and p3, which will be initialised with the attributes name and age, return a sentence in the following format:
+// {other person name} is {older than / younger than / the same age as} me.
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  compareAge(other) {
+    if (other.age < this.age) {
+      return `${other.name} is younger than me.`;
+    } else if (other.age > this.age) {
+      return `${other.name} is older than me.`;
+    } else {
+      return `${other.name} is the same age as me.`;
+    }
+  }
+}
+
+// Create a function that takes two parameters and, if both parameters are strings, add them as if they were integers or if the two parameters are integers, concatenate them.
+
+function stupidAddition(a, b) {
+  if (typeof a == typeof b) {
+    if (typeof a == "string") {
+      return parseInt(a) + parseInt(b);
+    } else {
+      return "" + a + b;
+    }
+  }
+  return null;
+}
+
+// Let's say we wanted to change the amount of pages that Google could skip to.
+// Create a function where given a number of pages n, return the word 'Google' but with the correct number of "o"s.
+
+function googlify(n) {
+  if (n > 1) {
+    let o = "o";
+    return "G" + o.repeat(n) + "gle";
+  }
+  return "invalid";
+}
+
+// Write a function that finds the sum of an array. Make your function recursive.
+
+function sum(arr) {
+  return arr.reduce((sum, num) => sum + num, 0);
+}
+
+// Write a function that returns true if a number is a palindrome.
+
+function isPalindrome(n) {
+  let x = n.toString();
+  let y = x
+    .split("")
+    .reverse()
+    .join("");
+  return x == y;
+}
