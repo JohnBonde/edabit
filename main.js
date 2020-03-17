@@ -249,3 +249,47 @@ function isPalindrome(n) {
     .join("");
   return x == y;
 }
+
+// Given a class for a BasicPlan, write the classes for StandardPlan and PremiumPlan which have class properties of the following:
+
+class BasicPlan {
+  static canStream = true;
+  static canDownload = true;
+  static numOfDevices = 1;
+  static hasSD = true;
+  static hasHD = false;
+  static hasUHD = false;
+  static price = "$8.99";
+}
+
+class StandardPlan {
+  static canStream = true;
+  static canDownload = true;
+  static numOfDevices = 2;
+  static hasSD = true;
+  static hasHD = true;
+  static hasUHD = false;
+  static price = "$12.99";
+}
+
+class PremiumPlan {
+  static canStream = true;
+  static canDownload = true;
+  static numOfDevices = 4;
+  static hasSD = true;
+  static hasHD = true;
+  static hasUHD = true;
+  static price = "$15.99";
+}
+
+// Create a function that takes in year and months as input, then return what year it would be after n-months has elapsed.
+
+function afterNMonths(year, months) {
+  if (!year) {
+    return "year missing";
+  } else if (!months) {
+    return "month missing";
+  } else {
+    return Math.floor(year + months / 12);
+  }
+}
