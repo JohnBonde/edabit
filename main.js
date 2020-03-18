@@ -293,3 +293,30 @@ function afterNMonths(year, months) {
     return Math.floor(year + months / 12);
   }
 }
+
+// Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num up to length.
+
+function arrayOfMultiples(num, length) {
+  let arr = [];
+  for (let i = 0; i < length; i++) {
+    arr.push(num * (i + 1));
+  }
+  return arr;
+}
+
+// Create a function that takes a Present Value of Cash pv, an Investment Rate ir and the Number of Years years to be Invested and returns the Net Present Value.
+
+function netPresentValue(pv, ir, years) {
+  let present = Math.round((pv * (1 - Math.pow(1 + ir, -years))) / ir);
+  if (present < 0) return false;
+  return `$${present}`;
+}
+
+// Wild Roger is tasked with shooting down 6 bottles with 6 shots as fast as possible. Here are the different types of shots he could make:
+// He could use one pistol to shoot a bottle with a "Bang!" in 0.5 seconds.
+// Or he could use both pistols at once with a "BangBang!" to shoot two bottles in 0.5 seconds.
+// Given an array of strings, return the time (in seconds) it took to shoot down all 6 bottles. Make sure to only count Bangs and BangBangs. Anything else doesn't count.
+
+function rogerShots(arr) {
+  return arr.filter(x => x == "Bang!" || x == "BangBang!").length / 2;
+}
