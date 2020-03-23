@@ -320,3 +320,38 @@ function netPresentValue(pv, ir, years) {
 function rogerShots(arr) {
   return arr.filter(x => x == "Bang!" || x == "BangBang!").length / 2;
 }
+
+// Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+
+function calculator(num1, operator, num2) {
+  switch (operator) {
+    case "+":
+      return num1 + num2;
+      break;
+    case "-":
+      return num1 - num2;
+      break;
+    case "/":
+      if (num2 == 0) {
+        return "Can't divide by 0!";
+      }
+      return num1 / num2;
+      break;
+    case "*":
+      return num1 * num2;
+      break;
+    default:
+      return "Invalid operator";
+  }
+}
+
+// Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item.
+// Change will always be represented in the following order: quarters, dimes, nickels, pennies.
+
+function changeEnough(change, amountDue) {
+  let quarter = change[0] * 0.25;
+  let dime = change[1] * 0.1;
+  let nickle = change[2] * 0.05;
+  let penny = change[3] * 0.01;
+  return quarter + dime + nickle + penny >= amountDue;
+}
